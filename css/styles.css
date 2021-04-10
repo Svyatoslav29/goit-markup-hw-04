@@ -47,15 +47,14 @@
   .container {
     width: 100%;
     max-width: 1170px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 0 15px;
+    margin: 0 auto;
   }
 
   .container-footer {
     display:flex;
     flex-wrap: wrap;
+    align-items: baseline;
   }
 
   .container-item {
@@ -76,13 +75,13 @@
     display: inline-flex;
   }
 
-  .menu li {
-    margin-left: 50px;
+  .menu li:not(:last-child) {
+    margin-right: 50px;
   }
 
-  .list-nav-item:not(:last-child) {
+  /*.list-nav-item:not(:last-child) {
     margin-right: 50px;
- }
+ }*/
 
   /* хедер */
 
@@ -171,7 +170,6 @@
   border: 0;
   clip: rect(0 0 0 0)
 }
-
 
 /* портфолио мейнсек */
 
@@ -283,13 +281,6 @@ margin-bottom: 4px;
   }
 
  /* иконки */
-
- .list-menu-item .icon{
-  height: 16px;
-  width: 10px;
-  stroke: var(--main-text-color);
-  margin-right: 10px;
- }
  
 .link-head-adress {
   display: flex;
@@ -299,7 +290,7 @@ margin-bottom: 4px;
 
 .link-head-adress:hover .icon,
 .link-head-adress:focus .icon {
-stroke: var(--accent-color);
+  stroke: currentColor;
 }
 
 .social-icons {
@@ -378,9 +369,9 @@ stroke: var(--accent-color);
   .list-menu-item .icon {
     stroke: var(--main-text-color);
     margin-right: 10px;
+    fill: currentColor;
    }
    
-
   .main-sec-advantages-text {
     font-size: 14px;
     line-height: 1.71;
@@ -545,12 +536,11 @@ margin-bottom: 50px;
 }
 
 .clients-sec-list {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-column-gap: 30px; 
+  display: flex;
   list-style: none;
   box-sizing: inherit;
   margin-top: 50px;
+  justify-content: space-between;
 }
 
 .clients-sec-link {
